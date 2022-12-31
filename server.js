@@ -12,20 +12,6 @@ app.use(cors())
 const PORT = 3000;
 
 
-
-/*
-let db
-
-connectToDb((err) => {
-    if (!err) {
-    
-    })
-    db = getDB()
-    }    
-})*/
-
-
-
 mongoose.connection.once('open', () =>{
     console.log('-------------------------------------------')
     console.log('Database connection is succesfull!')
@@ -57,16 +43,5 @@ app.post('/tsunadd', (req,res) =>
     post.save();
     console.log(post);
     res.status(201).json({message : "Post added succesfully!"});
-
-
-
-    /*db.collection('tsunderes')
-        .insertOne(tsundata)
-        .then(result =>{
-            res.status(201).json(result)
-        })
-        .catch(err => {
-            res.status(500).json({err: 'Couldnt post the data...'})
-        })*/
 })
 
